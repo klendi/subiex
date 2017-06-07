@@ -18,6 +18,7 @@ bot.on('message', (message) => {
 			{
 				var partToCalc = message.content.split(' ')
 				message.reply(partToCalc[2])
+				console.log('Part to calculate is ' + partToCalc[2])
 			}
 			try
 			{
