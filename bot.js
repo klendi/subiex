@@ -13,6 +13,9 @@ bot.on('message', (message) => {
   if (message.content === config.prefix + "report") 
   {
     message.reply('I am online and working!')
+    var time = Date.now()
+    message.channel.sendMessage('With **PING : ' + Date.now() - time + ' ms**')
+    message.channel.sendMessage('The time is :' + Date.now())
   }
 })
 
