@@ -34,44 +34,66 @@ bot.on('message', (message) => {
 		}
 })
 
-exports.bot = bot
-exports.config = config
+path = require('/scripts/');
 
-newCommand = function (name, type, callback, aliases, description, usage) 
+function getDirectories(srcpath) 
 {
-  exports.commands[type][name] = {}
-  exports.commands[type][name]['aliases'] = aliases
-  exports.commands[type][name]['description'] = description
-  exports.commands[type][name]['usage'] = usage
-  exports.commands[type][name]['process'] = callback
+    return fs.readdirSync(srcpath).filter(function(file) 
+    {
+        return fs.statSync(path.join(srcpath, file)).isDirectory();
+    });
 }
 
-function LoadScript(path, reload) 
+var plugin_folders;
+var plugin_directory;
+var exec_dir;
+try 
 {
-	var pathReq = require(path)
+    plugin_directory = "scripts/";
+    plugin_folders = getDirectories(plugin_directory);
+} 
+catch(e)
+{
+    exec_dir = path.dirname(process.execPath); //need this to change node prefix for npm installs
+    plugin_directory = path.dirname(process.execPath) + "scripts/";
+    plugin_folders = getDirectories(plugin_directory);
+}
 
-	if (reload) 
-	{
-		console.log('Reloaded script @ ' + path)
-	} 
-	else
-	{
-		console.log('Loaded script @ ' + path)
-	}
+function load_plugins()
+{
+    var bot = require("bot.js");
+    var commandCount = 0;
+    for (var i = 0; i < plugin_folders.length; i++) 
+    {
+        var plugin;
+        try
+        {
+            plugin = require(plugin_directory + plugin_folders[i])
+        } 
+        catch (err)
+        {
+            console.log("Improper setup of the '" + plugin_folders[i] +"' plugin. : " + err);
+        }
+        if (plugin)
+        {
+            if("commands" in plugin)
+            {
+                for (var j = 0; j < plugin.commands.length; j++) 
+                {
+                    if (plugin.commands[j] in plugin)
+                    {
+                        bot.addCommand(plugin.commands[j], plugin[plugin.commands[j]])
+                        commandCount++;
+                    }
+                }
+            }
+        }
+    }
+    console.log("Loaded " + bot.commandCount() + " chat commands")
 }
 
 
-exports.newCommand = newCommand
-exports.LoadScript = LoadScript
 
-//Loading all the scripts from ./scripts/ directory
-var scripts = fs.readdirSync('./scripts/')
-scripts.forEach(script => {
-  if (script.substring(script.length - 3, script.length) === '.js') 
-  {
-    exports.LoadScript('./scripts/' + script)
-  }
-})
 
 
 bot.login(process.env.BOT_TOKEN)
