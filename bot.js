@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
+const config = require('./config')
 const dotenv = require('dotenv')
 
 dotenv.load()
@@ -9,9 +10,9 @@ bot.on('ready', () => {
 })
 
 bot.on('message', (message) => {
-  if (message.content === 'ping') 
+  if (message.content === config.prefix + "report") 
   {
-    message.reply('Ping')
+    message.reply('I am online and working!')
   }
 })
 
