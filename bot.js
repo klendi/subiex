@@ -69,7 +69,7 @@ var scripts = fs.readdirSync('./scripts/')
 scripts.forEach(script => {
   if (script.substring(script.length - 3, script.length) === '.js') 
   {
-    exports.LoadScript('./script/' + script)
+    exports.LoadScript('./scripts/' + script)
   }
 })
 
