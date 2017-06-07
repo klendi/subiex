@@ -15,7 +15,7 @@ bot.on('message', (message) => {
     message.reply('I am online and working!')
     var time = Date.now()
     message.channel.sendMessage('With **PING : ' +  (Date.now() - time) + ' ms**')
-    message.channel.sendMessage('This report was in :' + date())
+    message.channel.sendMessage('This report was in :' + new Date())
     console.log('Report sent in the chat by ' + message.author.name);
   }
 })
