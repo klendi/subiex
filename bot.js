@@ -27,41 +27,11 @@ bot.on('message', (message) => {
 					case config.prefix + 'help':
 						message.reply('Help goes here ...')
 						break;
+					
 					default:
 						message.reply('**INVALID COMMAND**')
 				}
 				
-				if(message.content.startsWith('!say'))
-				{
-					var partToSay = message.content.split(" ")
-					message.reply(partToSay[2])
-				}
-				if(message.content.startsWith('!math'))
-				{
-					var result
-					try
-					{
-						var partToCalc = message.content.split(" ")
-						result = math.eval(partToCalc[2])
-						message.reply('Result : ' + result)
-					}
-					catch
-					{
-						console.log('Failed to do math calc ' + message.content + ' ')
-						message.reply('Invalid Calculation Expression')
-					}
-					finally
-					{
-						if (isNaN(parseFloat(result))) 
-						{
-      						return 'Invalid Calculation Expression'
-   						} 
-   						else 
-   						{
-     						 return 'Result ':  + result
-    					}
-					}
-				}
 			}
 			catch(ex){console.log('The error is at switch statement : ' + ex.stack)}
 		}
