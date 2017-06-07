@@ -61,7 +61,7 @@ function LoadScript(path, reload)
 }
 
 
-exports.registerCommand = registerCommand
+exports.newCommand = newCommand
 exports.LoadScript = LoadScript
 
 //Loading all the scripts from ./scripts/ directory
