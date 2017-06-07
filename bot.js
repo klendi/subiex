@@ -14,6 +14,11 @@ bot.on('ready', () => {
 bot.on('message', (message) => {
 		if (message.content.startsWith(config.prefix)) 
 		{
+			if (message.content.startsWith(config.prefix + 'math')) 
+			{
+				var partToCalc = message.content.split(' ')
+				message.reply(partToCalc[2])
+			}
 			try
 			{
 				switch(message.content)
