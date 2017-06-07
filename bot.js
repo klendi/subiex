@@ -10,38 +10,7 @@ bot.on('ready', () => {
 })
 
 bot.on('message', (message) => {
-	var mute = new Boolean(false)
-
-	if (message.content === config.prefix + 'mute' && mute === false) 
-	{
-		message.reply('Okay boss :zipper_mouth: ! (MUTE MODE ON)')
-		mute = true;
-	}
-	else if (message.content === config.prefix + 'mute' && mute === true)
-	{
-		//unmute
-		message.reply('Glad to be back xD (MUTE MODE OFF)')
-		mute = false;
-	}
-})
-
-bot.on('message', (message) => {
-	var mute = new Boolean(false)
-
-	if (message.content === config.prefix + 'mute' && mute === false) 
-	{
-		message.reply('Okay boss :zipper_mouth: ! (MUTE MODE ON)')
-		console.log('Mute mode on')
-		mute = true;
-	}
-	if (message.content === config.prefix + 'mute' && mute === true)
-	{
-		//unmute
-		message.reply('Glad to be back xD (MUTE MODE OFF)')
-		console.log('Mute mode off')
-		mute = false;
-	}
-		if (message.content.startsWith('!') && mute === false) 
+		if (message.content.startsWith('!')) 
 		{
 			try
 			{
