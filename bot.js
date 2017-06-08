@@ -68,22 +68,22 @@ bot.on('message', (message) => {
 
 
 
-////////////////////////////////////////////////////LOREM IPSUM GENERATOR TEST///////
+/////////////////////////LOREM IPSUM GENERATOR TEST//////////////////
 try
 {
-var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sunt laborum eum adipisci odio doloribus sit officia expedita. Nihil porro hic, sint voluptate unde accusantium molestias tenetur, laudantium reprehenderit amet dolore voluptas? Laudantium sunt autem aliquam nesciunt maxime nostrum ipsum alias doloribus. Numquam animi veniam impedit recusandae, deserunt facere. Debitis.";
-var points = [',', '.', '?', '!', '?!']
 
 function getRandom(min, max) {
-	return Math.random() * (max - min) + min
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function generateLoremText(num) {
+var points = [',', '.', '?', '!', '?!']
 	var wordsArray = []
 		
+var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sunt laborum eum adipisci odio doloribus sit officia expedita. Nihil porro hic, sint voluptate unde accusantium molestias tenetur, laudantium reprehenderit amet dolore voluptas? Laudantium sunt autem aliquam nesciunt maxime nostrum ipsum alias doloribus. Numquam animi veniam impedit recusandae, deserunt facere. Debitis.";
 	wordsArray = loremText.split(' ')
 	
-	var word
+	var word = ""
 
 	for (var i = 0; i < num; i++) {
 		if(i === 1)
