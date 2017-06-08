@@ -11,6 +11,10 @@ bot.on('ready', () =>  {
   console.log('Subiex is ready')
 })
 
+function isCommand(str, message) {
+	return message.content.toLowerCase().startsWith(config.prefix + str) 
+}
+
 bot.on('message', (message) =>  {
 	if(message.content.startsWith(config.prefix))
 	{
@@ -24,7 +28,10 @@ bot.on('message', (message) =>  {
 						break; 
 					case config.prefix + 'help':
 						message.reply('Help goes here ...')
-						break; 
+						break;
+					case config.prefix + 'hello':
+						message.channel.send('Hello there ' + message.author.username)
+						break;
 					
 					default:
 						message.reply('**INVALID COMMAND**')
@@ -35,39 +42,19 @@ bot.on('message', (message) =>  {
 	}
 })
 
-exports.bot = bot
-exports.config = config
-exports.commands = {
-	master: {},
-	moderator: {},
-	default: {},
-	dm: {}
-}
-
-registerCommand = function (name, type, callback, aliases, description, usage) {
-	exports.commands[type][name] = {}
-	exports.commands[type][name]['aliases'] = aliases
-	exports.commands[type][name]['description'] = description
-	exports.commands[type][name]['usage'] = usage
-	exports.commands[type][name]['process'] = callback
-}
-
-var loadScript = (path, reload) => {
-	var req = require(path)
-	if (reload) {
-		console.log('Reloaded script at ' + path)
-	} else {
-		console.log('Script loaded at ' + path)
-	}
-}
-
-exports.registerCommand = registerCommand
-exports.loadScript = loadScript
-
-var commands = fs.readdirSync('./scripts/')
-commands.forEach(script => {
-	if (script.substring(script.length - 3, script.length) === '.js') {
-		exports.loadScript('./scripts/' + script)
+bot.on('message', (message) => {
+	if(isCommand('lorem',message)) {
+	
+	var args = message.content.split(/[ ]+/)
+	
+		if(args.length === 1 && args.length > 2)
+		{
+			message.reply('Please define a argument for lorem command , ```Usage : lorem [paragraphs number]```');
+		} 
+		else if(args.length === 2) 
+		{
+			message.reply('```Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quisquam dolores vero, laboriosam. Modi, quidem optio ea tenetur a atque eligendi saepe ipsum ratione laboriosam culpa vitae excepturi temporibus eum consequatur velit, reprehenderit harum, nesciunt incidunt minima molestias illum eveniet ipsa doloremque! Aliquam nobis fugiat dignissimos, iure voluptas dolorem perspiciatis.```')
+		}
 	}
 })
 
