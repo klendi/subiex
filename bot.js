@@ -90,8 +90,11 @@ function generateLoremText(num) {
 	var word
 
 	for (var i = 0; i < num; i++) {
-		word += "Lorem"
-		word += " ipsum "
+		if(i === 1)
+		{
+			word += "Lorem"
+			word += " ipsum "
+		}
 
 		if (i > 2) {
 			var wArray = wordsArray.join(' ')
