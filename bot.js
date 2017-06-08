@@ -66,7 +66,7 @@ bot.on('message', (message) => {
 			if(args.length === 1)
 				message.reply("You didn't define a argument, ```USE: !say [text to say]```");
 			else
-				message.channel.send(args.join(' '.substring(5)));
+				message.channel.send(args.join(' ').substring(5));
 		}
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
