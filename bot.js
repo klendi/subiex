@@ -57,7 +57,7 @@ bot.on('message', (message) => {
 	var args = message.content.split(/[ ]+/)
 
 	if(isCommand('say', message)) {
-		if(hasRole(message.member, 'Admin'))
+		if(hasRole(message.author, 'Admin'))
 		{
 			if(args.length === 1)
 				message.reply("You didn't define a argument, ```USE: !say [text to say]```");
