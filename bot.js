@@ -54,9 +54,61 @@ bot.on('message', (message) => {
 		else if(args.length === 2) 
 		{
 			message.channel.send('Lorem ipsum text ready to paste')
-			message.reply('```Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quisquam dolores vero, laboriosam. Modi, quidem optio ea tenetur a atque eligendi saepe ipsum ratione laboriosam culpa vitae excepturi temporibus eum consequatur velit, reprehenderit harum, nesciunt incidunt minima molestias illum eveniet ipsa doloremque! Aliquam nobis fugiat dignissimos, iure voluptas dolorem perspiciatis.```')
+			var text = 
+			message.reply('')
 		}
 	}
 })
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////LOREM IPSUM GENERATOR TEST///////
+try
+{
+var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sunt laborum eum adipisci odio doloribus sit officia expedita. Nihil porro hic, sint voluptate unde accusantium molestias tenetur, laudantium reprehenderit amet dolore voluptas? Laudantium sunt autem aliquam nesciunt maxime nostrum ipsum alias doloribus. Numquam animi veniam impedit recusandae, deserunt facere. Debitis.";
+var points = [',', '.', '?', '!', '?!']
+
+function getRandom(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateLoremText(num) {
+	var wordsArray
+
+	for (var i = 0; i < num; i++) {
+
+		wordsArray[i] = loremText.toLowerCase().split(' ')
+	}
+	var word
+
+	for (var i = 0; i < num; i++) {
+		word += "Lorem"
+		word += " ipsum "
+
+		if (i > 2) {
+			word += wordsArray[getRandom(2, num)].join(' ')
+			if (getRandom(1, 10) === 10) //is even
+			{
+				//now we insert a . or ? or any sign to our sentence
+				word += points[getRandom(0, points.length)]
+			}
+		}
+	}
+
+	return word;
+}
+}
+catch(ex) {
+console.log('Error at lorem ipsum generator ' + ex.stack)
+}
+/////////////////////////////////////////////
 
 bot.login(process.env.BOT_TOKEN)
