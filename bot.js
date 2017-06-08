@@ -80,11 +80,9 @@ function getRandom(min, max) {
 
 function generateLoremText(num) {
 	var wordsArray = []
-
-	for (var i = 0; i < num; i++) {
-
-		wordsArray[i] += loremText.toLowerCase().split(' ')
-	}
+		
+	wordsArray = loremText.split(' ')
+	
 	var word
 
 	for (var i = 0; i < num; i++) {
@@ -98,7 +96,7 @@ function generateLoremText(num) {
 			var wArray = [] 
 			wArray = wordsArray.join(' ')
 			word += wArray[getRandom(2, num)]
-			var rand = getRandom(1, 25)
+			var rand = getRandom(1, 10)
 			if (rand === 10)
 			{
 				word += points[getRandom(0, points.length)]
