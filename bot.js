@@ -85,7 +85,7 @@ function generateLoremText(num) {
 
 	for (var i = 0; i < num; i++) {
 
-		wordsArray[i] = loremText.toLowerCase().split(/[ ]+/)
+		wordsArray[i] += loremText.toLowerCase().split(/[ ]+/)
 	}
 	var word
 
@@ -94,7 +94,8 @@ function generateLoremText(num) {
 		word += " ipsum "
 
 		if (i > 2) {
-			word += wordsArray[getRandom(2, num)].join(' ')
+			var wArray = wordsArray.join(' ')
+			word += wArray[getRandom(2, num)]
 			if (getRandom(1, 10) === 10) //is even
 			{
 				//now we insert a . or ? or any sign to our sentence
