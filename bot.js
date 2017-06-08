@@ -15,7 +15,7 @@ function isCommand(str, message) {
 	return message.content.toLowerCase().startsWith(config.prefix + str) 
 }
 
-bot.on('message', (message) =>  {
+/*bot.on('message', (message) =>  {
 	if(message.content.startsWith(config.prefix))
 	{
 			try {
@@ -40,20 +40,20 @@ bot.on('message', (message) =>  {
 			}
 			catch(ex) {console.log('The error is at switch statement : ' + ex.stack)}
 	}
-})
+})*/
 
 bot.on('message', (message) => {
-	if(isCommand('lorem',message)) {
-	
 	var args = message.content.split(/[ ]+/)
 	
-		if(args.length === 1 && args.length > 2)
+	if(isCommand('lorem', message)) {
+	
+		if(args.length === 1 || args.length > 2)
 		{
 			message.reply('Please define a argument for lorem command , ```Usage : lorem [paragraphs number]```');
 		} 
 		else if(args.length === 2) 
 		{
-			message.reply(args[1])
+			message.channel.send('Lorem ipsum text ready to paste')
 			message.reply('```Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quisquam dolores vero, laboriosam. Modi, quidem optio ea tenetur a atque eligendi saepe ipsum ratione laboriosam culpa vitae excepturi temporibus eum consequatur velit, reprehenderit harum, nesciunt incidunt minima molestias illum eveniet ipsa doloremque! Aliquam nobis fugiat dignissimos, iure voluptas dolorem perspiciatis.```')
 		}
 	}
