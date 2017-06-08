@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const Subiex = require('../bot.js')
 const config = require('../config.json')
 
-Subiex.newCommand('lorem', 'default', (message, bot) => {
+Subiex.registerCommand('lorem', 'default', (message, bot) => {
 
 	if (message.content === config.prefix + 'lorem500') 
 	{
