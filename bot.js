@@ -81,11 +81,11 @@ function getRandom(min, max) {
 }
 
 function generateLoremText(num) {
-	var wordsArray
+	var wordsArray = []
 
 	for (var i = 0; i < num; i++) {
 
-		wordsArray[i] = loremText.toLowerCase().split(' ')
+		wordsArray[i] = loremText.toLowerCase().split(/[ ]+/)
 	}
 	var word
 
