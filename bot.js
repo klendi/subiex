@@ -15,6 +15,17 @@ function isCommand(str, message) {
 	return message.content.toLowerCase().startsWith(config.prefix + str) 
 }
 
+function pluck(array) {
+	return array.map(function item() {return item[name];})
+}
+
+function hasRole(person, role) {
+	if(pluck(person.roles).includes(role))
+		return true;
+	else
+		return false;
+}
+
 /*bot.on('message', (message) =>  {
 	if(message.content.startsWith(config.prefix))
 	{
@@ -44,71 +55,21 @@ function isCommand(str, message) {
 
 bot.on('message', (message) => {
 	var args = message.content.split(/[ ]+/)
-	
-	if(isCommand('lorem', message)) {
-	
-		if(args.length === 1 || args.length > 2)
+
+	if(isCommand('say', message)) {
+		if(hasRole(message.member, 'Admin'))
 		{
-			message.reply('Please define a argument for lorem command , ```Usage : lorem [paragraphs number]```');
-		} 
-		else if(args.length === 2) 
-		{
-			message.channel.send('Lorem ipsum text ready to paste')
-			var text = generateLoremText(args[1])
-			message.reply('```' + text + '```')
+			if(args.length === 1)
+				message.reply("You didn't define a argument, ```USE: !say [text to say]```");
+			else
+				message.channel.send(args.join(' '.substring(5)));
 		}
+		else
+			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
 	}
 })
 
 
 
-
-
-
-
-
-
-/////////////////////////LOREM IPSUM GENERATOR TEST//////////////////
-try
-{
-
-function getRandom(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function generateLoremText(num) {
-var points = [',', '.', '?', '!', '?!']
-	var wordsArray = []
-		
-var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sunt laborum eum adipisci odio doloribus sit officia expedita. Nihil porro hic, sint voluptate unde accusantium molestias tenetur, laudantium reprehenderit amet dolore voluptas? Laudantium sunt autem aliquam nesciunt maxime nostrum ipsum alias doloribus. Numquam animi veniam impedit recusandae, deserunt facere. Debitis.";
-	
-	var word = ""
-
-	for (var i = 0; i < num; i++) {
-		if(i === 1)
-		{
-			word += "Lorem"
-			word += " ipsum "
-		}
-
-		if (i > 2) {
-			var wArray = [] 
-			wArray = loremText.split('')
-			word += wArray[getRandom(2, num)]
-			var rand = getRandom(1, 30)
-			if (rand === 10)
-			{
-				word += points[getRandom(0, points.length)]
-			}
-		}
-	}
-
-	return word;
-}
-}
-catch(ex) {
-console.log('Error at lorem ipsum generator ' + ex.stack)
-}
-/////////////////////////////////////////////
 
 bot.login(process.env.BOT_TOKEN)
