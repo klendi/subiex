@@ -53,6 +53,7 @@ bot.on('message', (message) => {
 		} 
 		else if(args.length === 2) 
 		{
+			message.reply(args[1])
 			message.reply('```Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quisquam dolores vero, laboriosam. Modi, quidem optio ea tenetur a atque eligendi saepe ipsum ratione laboriosam culpa vitae excepturi temporibus eum consequatur velit, reprehenderit harum, nesciunt incidunt minima molestias illum eveniet ipsa doloremque! Aliquam nobis fugiat dignissimos, iure voluptas dolorem perspiciatis.```')
 		}
 	}
