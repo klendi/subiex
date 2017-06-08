@@ -16,14 +16,18 @@ function isCommand(str, message) {
 }
 
 function pluck(array) {
-	return array.map(function item() {return item["name"];})
+	return array.map(function(item) {return item["name"];})
 }
 
 function hasRole(person, role) {
 	if(pluck(person.roles).includes(role))
+	{
 		return true;
+	}
 	else
+	{
 		return false;
+	}
 }
 
 /*bot.on('message', (message) =>  {
