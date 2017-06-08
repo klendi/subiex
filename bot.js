@@ -75,9 +75,7 @@ var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delen
 var points = [',', '.', '?', '!', '?!']
 
 function getRandom(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.random() * (high - low) + low
 }
 
 function generateLoremText(num) {
@@ -85,7 +83,7 @@ function generateLoremText(num) {
 
 	for (var i = 0; i < num; i++) {
 
-		wordsArray[i] += loremText.toLowerCase().split(/[ ]+/)
+		wordsArray[i] += loremText.toLowerCase().split(' ')
 	}
 	var word
 
@@ -97,11 +95,12 @@ function generateLoremText(num) {
 		}
 
 		if (i > 2) {
-			var wArray = wordsArray.join(' ')
+			var wArray = [] 
+			wArray = wordsArray.join(' ')
 			word += wArray[getRandom(2, num)]
-			if (getRandom(1, 10) === 10) //is even
+			var rand = getRandom(1, 25)
+			if (rand === 10)
 			{
-				//now we insert a . or ? or any sign to our sentence
 				word += points[getRandom(0, points.length)]
 			}
 		}
