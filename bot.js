@@ -81,7 +81,6 @@ var points = [',', '.', '?', '!', '?!']
 	var wordsArray = []
 		
 var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sunt laborum eum adipisci odio doloribus sit officia expedita. Nihil porro hic, sint voluptate unde accusantium molestias tenetur, laudantium reprehenderit amet dolore voluptas? Laudantium sunt autem aliquam nesciunt maxime nostrum ipsum alias doloribus. Numquam animi veniam impedit recusandae, deserunt facere. Debitis.";
-	wordsArray = loremText.split(' ')
 	
 	var word = ""
 
@@ -94,9 +93,9 @@ var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delen
 
 		if (i > 2) {
 			var wArray = [] 
-			wArray = wordsArray.join(' ')
+			wArray = loremText.split('')
 			word += wArray[getRandom(2, num)]
-			var rand = getRandom(1, 10)
+			var rand = getRandom(1, 30)
 			if (rand === 10)
 			{
 				word += points[getRandom(0, points.length)]
