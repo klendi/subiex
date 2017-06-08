@@ -12,6 +12,8 @@ bot.on('ready', () =>  {
 })
 
 bot.on('message', (message) =>  {
+	if(message.content.startsWith(config.prefix))
+	{
 			try {
 				switch (message.content) {
 					case config.prefix + 'report':
@@ -30,6 +32,7 @@ bot.on('message', (message) =>  {
 				
 			}
 			catch(ex) {console.log('The error is at switch statement : ' + ex.stack)}
+	}
 })
 
 exports.bot = bot
