@@ -75,7 +75,7 @@ var loremText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delen
 var points = [',', '.', '?', '!', '?!']
 
 function getRandom(min, max) {
-	return Math.random() * (high - low) + low
+	return Math.random() * (max - min) + min
 }
 
 function generateLoremText(num) {
