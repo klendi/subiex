@@ -54,8 +54,8 @@ bot.on('message', (message) => {
 		else if(args.length === 2) 
 		{
 			message.channel.send('Lorem ipsum text ready to paste')
-			var text = 
-			message.reply('')
+			var text = generateLoremText(args[1])
+			message.reply('```' + text + '```')
 		}
 	}
 })
