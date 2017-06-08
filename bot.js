@@ -16,7 +16,7 @@ function isCommand(str, message) {
 }
 
 function pluck(array) {
-	return array.map(function item() {return item[name];})
+	return array.map(function item() {return item["name"];})
 }
 
 function hasRole(person, role) {
