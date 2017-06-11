@@ -56,28 +56,6 @@ bot.on('message', (message) =>  {
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
 	}
-	if (isCommand('log', message)) {
-	if (hasRole(message.member, 'Admin')) {
-		if (args.length == 1)
-			message.reply("You didn't define a argument, ```USE: !log [text to say]```")
-		else
-		{
-			console.log(args.join(' ').substring(5))
-			message.reply('Done')
-		}
-	}
-}
-
-if(isCommand('setGame', message)) {
-
-	if(hasRole(message.member, 'Admin')) {
-
-		if(args.length == 1)
-			message.reply("You didn't define a argument, ```USE: !setGame [Game status]")
-		else
-			bot.user.setGame(args.join(' ').substring(9))
-	}
-}
 
 
 })
