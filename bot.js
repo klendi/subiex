@@ -9,6 +9,7 @@ dotenv.load()
 bot.on('ready', () =>  {
   console.log('Subiex is online')
   console.log('Subiex is ready')
+  bot.user.setGame('Helping Klendi')
 })
 
 function isCommand(str, message) {
@@ -70,6 +71,18 @@ bot.on('message', (message) => {
 		}
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
+	 if (isCommand('secretsay',message)) {
+		 if(args.length === 1)
+		 {
+			
+		 }
+		 else
+		 {
+			 
+		 }
+	 } else {
+		 
+	 }
 	}
 })
 
