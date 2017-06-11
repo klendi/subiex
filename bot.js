@@ -13,22 +13,7 @@ bot.on('ready', () =>  {
 })
 
 function isCommand(str, message) {
-	return message.content.toLowerCase().startsWith(config.prefix + str) 
-}
-
-function pluck(array) {
-	return array.map(function(item) {return item["name"];})
-}
-
-function hasRole(person, role) {
-	if(pluck(person.roles).includes(role))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return message.content.toLowerCase().startsWith(config.prefix + str)
 }
 
 /*bot.on('message', (message) =>  {
@@ -58,32 +43,43 @@ function hasRole(person, role) {
 	}
 })*/
 
-bot.on('message', (message) => {
-	var args = message.content.split(/[ ]+/)
+bot.on('message', (message) =>  {
+	var args = message.content.split(/[ ] +/)
 
-	if(isCommand('say', message)) {
-		if(hasRole(message.member, 'Admin'))
-		{
-			if(args.length === 1)
-				message.reply("You didn't define a argument, ```USE: !say [text to say]```");
+	if (isCommand('say', message)) {
+		if (hasRole(message.member, 'Admin')) {
+			if (args.length === 1)
+				message.reply("You didn't define a argument, ```USE: !say [text to say]```"); 
 			else
-				message.channel.send(args.join(' ').substring(5));
+				message.channel.send(args.join(' ').substring(5)); 
 		}
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
-	 if (isCommand('secretsay',message)) {
-		 if(args.length === 1)
-		 {
-			
-		 }
-		 else
-		 {
-			 
-		 }
-	 } else {
-		 
-	 }
 	}
+	if (isCommand('log', message)) {
+	if (hasRole(message.member, 'Admin')) {
+		if (args.length == 1)
+			message.reply("You didn't define a argument, ```USE: !log [text to say]```")
+		else
+		{
+			console.log(args.join(' ').substring(5))
+			message.reply('Done')
+		}
+	}
+}
+
+if(isCommand('setGame', message)) {
+
+	if(hasRole(message.member, 'Admin')) {
+
+		if(args.length == 1)
+			message.reply("You didn't define a argument, ```USE: !setGame [Game status]")
+		else
+			bot.user.setGame(args.join(' ').substring(9))
+	}
+}
+
+
 })
 
 
