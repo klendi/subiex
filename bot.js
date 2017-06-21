@@ -5,6 +5,7 @@ const math = require('mathjs')
 const config = require('./config')
 const dotenv = require('dotenv')
 const randomPuppy = require('random-puppy')
+var reddit = require('reddit-joke');
 dotenv.load()
 
 bot.on('ready', () =>  {
@@ -54,6 +55,12 @@ bot.on('message', (message) => {
     	.then(url => {
         	message.channel.send(url)
     	})
+	}
+	else if(message.content.startsWith(config.prefix + "joke"))
+	{
+		var max = 10
+		//reddit.joke(max)
+		message.channel.send(reddit.joke(max))
 	}
 })
 
