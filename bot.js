@@ -5,13 +5,13 @@ const math = require('mathjs')
 const config = require('./config')
 const dotenv = require('dotenv')
 const randomPuppy = require('random-puppy')
-var reddit = require('reddit-joke');
+const terinjokess = require('terinjokes')
 dotenv.load()
 
 bot.on('ready', () =>  {
   console.log('Subiex is online')
   console.log('Subiex is ready')
-  bot.user.setGame('Checking for cool memes')
+  bot.user.setGame('Checking Memes')
 })
 
 function isCommand(str, message) {
@@ -58,9 +58,8 @@ bot.on('message', (message) => {
 	}
 	else if(message.content.startsWith(config.prefix + "joke"))
 	{
-		var max = 10
-		//reddit.joke(max)
-		message.channel.send(reddit.joke(max))
+		var joke = terinjokes();
+			message.channel.send(joke)
 	}
 })
 

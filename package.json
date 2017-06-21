@@ -32,7 +32,7 @@
     "mathjs": "^3.13.3",
     "node-opus": "^0.2.6",
     "random-puppy": "^1.1.0",
-    "reddit-joke":"^1.0.3"
+    "terinjokes":"^1.1.2"
   },
   "engines": 
   {
