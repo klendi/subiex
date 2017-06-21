@@ -10,7 +10,7 @@ dotenv.load()
 bot.on('ready', () =>  {
   console.log('Subiex is online')
   console.log('Subiex is ready')
-  bot.user.setGame('Helping Klendi')
+  bot.user.setGame('Checking for cool memes')
 })
 
 function isCommand(str, message) {
