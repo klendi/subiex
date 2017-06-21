@@ -4,6 +4,7 @@ const fs = require('fs')
 const math = require('mathjs')
 const config = require('./config')
 const dotenv = require('dotenv')
+const randomPuppy = require('random-puppy')
 dotenv.load()
 
 bot.on('ready', () =>  {
@@ -43,6 +44,20 @@ function isCommand(str, message) {
 	}
 })*/
 
+
+bot.on('message', (message) => {
+
+	if(message.content.startsWith(config.prefix + "dog"))
+	{
+		randomPuppy()
+    	
+    	.then(url => {
+        	message.channel.send(url)
+    	})
+	}
+})
+
+/*
 bot.on('message', (message) =>  {
 	var args = message.content.split(/[ ] +/)
 
@@ -58,7 +73,7 @@ bot.on('message', (message) =>  {
 	}
 
 
-})
+})*/
 
 
 

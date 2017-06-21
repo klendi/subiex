@@ -30,10 +30,12 @@
     "dotenv": "^4.0.0",
     "js-yaml": "^3.8.4",
     "mathjs": "^3.13.3",
-    "node-opus": "^0.2.6"
+    "node-opus": "^0.2.6",
+    "random-puppy": "^1.1.0"
+
   },
   "engines": 
   {
-   "node": "8.0.0"
+   "node": "8.1.2"
   }
 }
