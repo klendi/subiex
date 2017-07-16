@@ -5,7 +5,6 @@ const math = require('mathjs')
 const config = require('./config')
 const dotenv = require('dotenv')
 const randomPuppy = require('random-puppy')
-const terinjokess = require('terinjokes')
 dotenv.load()
 
 bot.on('ready', () =>  {
@@ -13,10 +12,6 @@ bot.on('ready', () =>  {
   console.log('Subiex is ready')
   bot.user.setGame('Checking Memes')
 })
-
-function isCommand(str, message) {
-	return message.content.toLowerCase().startsWith(config.prefix + str)
-}
 
 /*bot.on('message', (message) =>  {
 	if(message.content.startsWith(config.prefix))
@@ -48,18 +43,17 @@ function isCommand(str, message) {
 
 bot.on('message', (message) => {
 
-	if(message.content.startsWith(config.prefix + "dog"))
+	if(message.content.startsWith(config.prefix + 'dog'))
 	{
 		randomPuppy()
-    	
-    	.then(url => {
+		.then(url => {
         	message.channel.send(url)
     	})
 	}
-	else if(message.content.startsWith(config.prefix + "joke"))
+	else if(message.content == "(╯°□°）╯︵ ┻━┻")
 	{
-		var joke = terinjokes();
-			message.channel.send(joke)
+		message.channel.send("lemme take that table to its place")
+		message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)")
 	}
 })
 
