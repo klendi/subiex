@@ -86,7 +86,7 @@ bot.on('message', (message) => {
 		message.channel.send("lemme take that table to its place")
 		message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)")
 	}
-	else if(message.content === "!textemoji")
+	else if(message.content === "!moji")
 	{
 		var index = getRandomInt(0,24);
 		message.channel.send(emojis[index]);
