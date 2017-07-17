@@ -68,9 +68,12 @@ const emojis = [
 		"（╯°□°）╯︵( .o.)"
 	];
 
-	const phrases = ["Take it easy pal","Whoa","Why always i have to unflip the damn table"
+	const phrases = 
+	["Take it easy pal",
+	"Whoa",
+	"Why always me"
 	,"Awesome, another table to unflip",
-	"I will have my eyes on you ┬┴┬┴┤(･_├┬┴┬┴"]
+	"I will have my eyes on you ┬┴┬┴┤(･_├┬┴┬┴"];
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -94,7 +97,7 @@ bot.on('message', (message) => {
         	message.channel.send(url)
     	})
 	}
-	else if(message.content == "(╯°□°）╯︵ ┻━┻")
+	else if(message.content.includes("(╯°□°）╯︵ ┻━┻"))
 	{
 		var index = getRandomInt(0,phrases.Length - 1);
 		message.channel.send(phrases[index])
