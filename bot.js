@@ -68,6 +68,10 @@ const emojis = [
 		"（╯°□°）╯︵( .o.)"
 	];
 
+	const phrases = ["Take it easy pal","Whoa","Why always i have to unflip the damn table"
+	,"Awesome, another table to unflip",
+	"I will have my eyes on you ┬┴┬┴┤(･_├┬┴┬┴"]
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -92,7 +96,8 @@ bot.on('message', (message) => {
 	}
 	else if(message.content == "(╯°□°）╯︵ ┻━┻")
 	{
-		message.channel.send("lemme take that table to its place")
+		var index = getRandomInt(0,phrases.Length - 1);
+		message.channel.send(phrases[index])
 		message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)")
 	}
 	else if(message.content === "!moji")
@@ -101,22 +106,6 @@ bot.on('message', (message) => {
 		message.channel.send(emojis[index]);
 	}
 
-})
-
-
-bot.on('message', (message) =>  {
-	var args = message.content.split(/[ ] +/)
-
-	if (message.content.startsWith("!setGame") && message.author.id != config.botID) {
-			
-			if (args.length === 1)
-				message.reply("You didn't define a argument, ```USE: !setGame [text to say]```"); 
-			
-			else
-			{
-				bot.user.setGame(args.join(' ').substring(9)); 
-			}
-		}
 })
 
 
