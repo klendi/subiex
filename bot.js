@@ -61,8 +61,8 @@ bot.on('message', (message) => {
 	}
 	else if(message.content == "!textemoji")
 	{
-		var index = getRandomInt(0,text_emoji.emoji.length);
-		message.channel.send(text_emoji.emoji[index])
+		var index = getRandomInt(0,text_emoji.length);
+		message.channel.send(text_emoji[index]);
 	}
 })
 
