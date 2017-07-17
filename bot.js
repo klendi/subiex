@@ -100,31 +100,28 @@ bot.on('message', (message) => {
 		var index = getRandomInt(0,24);
 		message.channel.send(emojis[index]);
 	}
-	else if(isMoji(message.content))
-	{
-		var index = getRandomInt(0,24);
-		message.channel.send(emojis[index]);
-	}
 
 })
 
-/*
+
 bot.on('message', (message) =>  {
 	var args = message.content.split(/[ ] +/)
 
-	if (isCommand('say', message)) {
-		if (hasRole(message.member, 'Admin')) {
+	if (message.content.startsWith("!setGame")) {
+			
 			if (args.length === 1)
-				message.reply("You didn't define a argument, ```USE: !say [text to say]```"); 
+				message.reply("You didn't define a argument, ```USE: !setGame [text to say]```"); 
 			else
-				message.channel.send(args.join(' ').substring(5)); 
+			{
+				bot.user.setGame(args.join(' ').substring(9)); 
+			}
 		}
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
 	}
 
 
-})*/
+})
 
 
 
