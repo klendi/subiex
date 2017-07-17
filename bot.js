@@ -107,17 +107,16 @@ bot.on('message', (message) => {
 bot.on('message', (message) =>  {
 	var args = message.content.split(/[ ] +/)
 
-	if (message.content.startsWith("!setGame")) {
+	if (message.content.startsWith("!setGame") && message.author.id != config.botID) {
 			
 			if (args.length === 1)
 				message.reply("You didn't define a argument, ```USE: !setGame [text to say]```"); 
+			
 			else
 			{
 				bot.user.setGame(args.join(' ').substring(9)); 
 			}
 		}
-		else
-			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
 })
 
 
