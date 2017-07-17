@@ -10,7 +10,7 @@ dotenv.load()
 bot.on('ready', () =>  {
   console.log('Subiex is online')
   console.log('Subiex is ready')
-  bot.user.setGame('Checking Memes')
+  bot.user.setGame('┬─┬﻿ ノ( ゜-゜ノ)-ing')
 })
 
 /*bot.on('message', (message) =>  {
@@ -40,6 +40,34 @@ bot.on('ready', () =>  {
 	}
 })*/
 
+const emojis = [
+		"( ͡° ͜ʖ ͡°)",
+		"¯\\_(ツ)_/¯",
+		"ʕ•ᴥ•ʔ",
+		"(▀̿Ĺ̯▀̿ ̿)",
+		"(ง ͠° ͟ل͜ ͡°)ง",
+		"ಠ_ಠ",
+		"̿'̿'\\̵͇̿̿\\з=( ͠° ͟ʖ ͡°)=ε/̵͇̿̿/'̿̿ ̿ ̿ ̿ ̿ ̿",
+		"[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]",
+		"﴾͡๏̯͡๏﴿ O'RLY?",
+		"[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]",
+		"(ᵔᴥᵔ)",
+		"(¬‿¬)",
+		"(☞ﾟヮﾟ)☞ ☜(ﾟヮﾟ☜)",
+		"(づ￣ ³￣)づ",
+		"ლ(ಠ益ಠლ)",
+		"ಠ╭╮ಠ",
+		"♪~ ᕕ(ᐛ)ᕗ",
+		"ヾ(⌐■_■)ノ♪",
+		"◉_◉",
+		"\\ (•◡•) /",
+		"༼ʘ̚ل͜ʘ̚༽",
+		"┬┴┬┴┤(･_├┬┴┬┴",
+		"ᕦ(ò_óˇ)ᕤ",
+		"┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻",
+		"（╯°□°）╯︵( .o.)"
+	];
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -58,11 +86,10 @@ bot.on('message', (message) => {
 		message.channel.send("lemme take that table to its place")
 		message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)")
 	}
-	else if(message.content == "!textemoji")
+	else if(message.content === "!textemoji")
 	{
 		var index = getRandomInt(0,24);
-		var obj = JSON.parse(require('./text_emoji'));
-		message.channel.send(obj.emojis[0]);
+		message.channel.send(emojis[index]);
 	}
 })
 
