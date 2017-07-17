@@ -72,6 +72,17 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function isMoji(moji) {
+	foreach(moj in emojis)
+	{
+		if (moj == moji) {
+			return true;
+		}
+		else
+			return false;
+	}
+}
+
 bot.on('message', (message) => {
 
 	if(message.content.startsWith(config.prefix + 'dog'))
@@ -91,14 +102,10 @@ bot.on('message', (message) => {
 		var index = getRandomInt(0,24);
 		message.channel.send(emojis[index]);
 	}
-
-	foreach(emoj in emojis)
+	else if(isMoji(message.content))
 	{
-		if(message.content === emoj && message.content != "┬─┬﻿ ノ( ゜-゜ノ)")
-		{
-			var index = getRandomInt(0,24);
-			message.channel.send(emojis[index]);
-		}
+		var index = getRandomInt(0,24);
+		message.channel.send(emojis[index]);
 	}
 
 })
