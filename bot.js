@@ -61,7 +61,7 @@ bot.on('message', (message) => {
 	else if(message.content == "!textemoji")
 	{
 		var index = getRandomInt(0,24);
-		var obj = JSON.parse(fs.readFileSync('./text_emoji', 'utf8'));
+		var obj = JSON.parse(require('./text_emoji'));
 		message.channel.send(obj.emojis[0]);
 	}
 })
