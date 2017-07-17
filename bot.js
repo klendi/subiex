@@ -3,7 +3,6 @@ const bot = new Discord.Client()
 const fs = require('fs')
 const math = require('mathjs')
 const config = require('./config')
-const emoji = require('./text_emoji')
 const dotenv = require('dotenv')
 const randomPuppy = require('random-puppy')
 dotenv.load()
@@ -62,7 +61,8 @@ bot.on('message', (message) => {
 	else if(message.content == "!textemoji")
 	{
 		var index = getRandomInt(0,24);
-		message.channel.send(emoji.emojis[index]);
+		var obj = JSON.parse(fs.readFileSync('./text_emoji', 'utf8'));
+		message.channel.send(obj.emojis[0]);
 	}
 })
 
