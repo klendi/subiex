@@ -118,9 +118,6 @@ bot.on('message', (message) =>  {
 		}
 		else
 			message.reply("You don't have permissions to execute this command , you are not a **Admin**")
-	}
-
-
 })
 
 
