@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const fs = require('fs')
 const math = require('mathjs')
 const config = require('./config')
+const emoji = require('./text_emoji')
 const dotenv = require('dotenv')
 const randomPuppy = require('random-puppy')
 dotenv.load()
@@ -40,6 +41,9 @@ bot.on('ready', () =>  {
 	}
 })*/
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 bot.on('message', (message) => {
 
@@ -54,6 +58,11 @@ bot.on('message', (message) => {
 	{
 		message.channel.send("lemme take that table to its place")
 		message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)")
+	}
+	else if(message.content == "!textemoji")
+	{
+		var index = getRandomInt(0,text_emoji.emoji.length);
+		message.channel.send(text_emoji.emoji[index])
 	}
 })
 
