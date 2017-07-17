@@ -73,11 +73,9 @@ function getRandomInt(min, max) {
 }
 
 function isMoji(moji) {
-	foreach(moj in emojis)
-	{
-		if (moj == moji) {
+	for (var i = 0; i <= emojis.Length; i++) {
+		if(emojis[i] == moji)
 			return true;
-		}
 		else
 			return false;
 	}
