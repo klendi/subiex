@@ -91,6 +91,16 @@ bot.on('message', (message) => {
 		var index = getRandomInt(0,24);
 		message.channel.send(emojis[index]);
 	}
+
+	foreach(emoj in emojis)
+	{
+		if(message.content === emoj && message.content != "┬─┬﻿ ノ( ゜-゜ノ)")
+		{
+			var index = getRandomInt(0,24);
+			message.channel.send(emojis[index]);
+		}
+	}
+
 })
 
 /*
