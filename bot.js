@@ -147,7 +147,7 @@ bot.on('message', (message) => {
     	})
 	}
 
-		else if(message.content.includes("(╯°□°）╯︵ ┻━┻"))
+		if(message.content.includes("(╯°□°）╯︵ ┻━┻"))
 		{
 			message.channel.send("┬─┬﻿ ノ( ゜-゜ノ)");
 		}
@@ -159,11 +159,6 @@ bot.on('message', (message) => {
 		{
 			var index = getRandomInt(0,65);
 			message.channel.send(emojis[index]);
-		}
-		else if(message.content.startsWith('!deep'))
-		{
-			var index = getRandomInt(0,49);
-			message.channel.send(deep_quotes[index]);
 		}
 
 })
