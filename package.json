@@ -3,38 +3,41 @@
   "version": "1.0.1",
   "description": "Discord bot written in Discord.js",
   "main": "bot.js",
-  "bugs": 
-  {
-    "url": "https://github.com/klendigocci/subiex/issues"
+  "bugs": {
+    "url": "https://github.com/klendi/subiex/issues"
   },
-  "homepage": "https://github.com/klendigocci/subiex#readme",
-  
-  "scripts": 
-  {
+  "homepage": "https://github.com/klendi/subiex#readme",
+
+  "scripts": {
     "bot": "node bot.js"
   },
-  
-  "repository": 
-  {
+
+  "repository": {
     "type": "git",
-    "url": "git+https://github.com/klendigocci/subiex.git"
+    "url": "git+https://github.com/klendi/subiex.git"
   },
-  
-  "author": "Klendi Gocci (github.com/klendigocci)",
-  
+
+  "author": "Klendi Gocci (github.com/klendi)",
+
   "license": "MIT",
-  
-  "dependencies": 
-  {
-	  "discord.js": "^11.1.0",
+
+  "dependencies": {
+    "discord.js": "^11.2.1",
     "dotenv": "^4.0.0",
-    "js-yaml": "^3.8.4",
-    "mathjs": "^3.13.3",
-    "node-opus": "^0.2.6",
-    "random-puppy": "^1.1.0"
+    "js-yaml": "^3.10.0",
+    "math": "0.0.3",
+    "math.js": "^1.1.40",
+    "mathjs": "^3.16.5",
+    "node-opus": "^0.2.7",
+    "request": "^2.83.0",
+    "socket.io": "^0.9.19",
+    "tiny-emitter": "^2.0.2",
+    "update": "^0.7.4"
   },
-  "engines": 
-  {
-   "node": "8.1.2"
+  "engines": {
+    "node": "8.9.0"
+  },
+  "scripts": {
+    "start": "node bot.js"
   }
 }
