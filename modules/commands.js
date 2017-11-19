@@ -47,7 +47,7 @@ bot.on('message', (message) => {
                     return
                 }
             } else if (cmdType === 'moderator') {
-                let accepted = ['Bot Commander', 'Moderator']
+                let accepted = ['Admin']
                 let isMod
                 let roles = message.guild.member(message.author.id).roles.array()
                 for (let i = 0; i < roles.length; i++) {
