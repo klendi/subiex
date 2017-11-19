@@ -47,12 +47,12 @@ commands.forEach(script => {
   }
 })
 
-var modules = fs.readdirSync('./modules/')
-modules.forEach(script => {
-  if (script.substring(script.length - 3, script.length) === '.js') {
-    loadScript('./modules/' + script)
-  }
-})
+// var modules = fs.readdirSync('./modules/')
+// modules.forEach(script => {
+//   if (script.substring(script.length - 3, script.length) === '.js') {
+//     loadScript('./modules/' + script)
+//   }
+// })
 
 
 bot.login(process.env.BOT_TOKEN)
