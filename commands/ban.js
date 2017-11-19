@@ -4,7 +4,7 @@
 const Discord = require('discord.js')
 const Subiex = require('../bot.js')
 
-Confax.registerCommand('ban', 'moderator', (message, bot) => {
+Subiex.registerCommand('ban', 'moderator', (message, bot) => {
   let mention = message.mentions.users.first()
   let banPerms = message.guild.member(bot.user).hasPermission('BAN_MEMBERS')
   if (!mention) {
