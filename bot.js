@@ -3,7 +3,6 @@ const bot = new Discord.Client()
 const fs = require('fs')
 const yaml = require('js-yaml')
 const config = require('./config')
-const http = require('http')
 const dotenv = require('dotenv')
 dotenv.load()
 
