@@ -42,7 +42,7 @@ bot.on('message', (message) => {
         message.content = message.content.indexOf(' ') === 0 ? message.content.substring(1) : message.content
         if (cmd !== null) {
             if (cmdType === 'master') {
-                if (!(config.masters).includes(message.author.id)) {
+                if (!(config.master).includes(message.author.id)) {
                     message.reply("You don't have enough permissions to execute this command.")
                     return
                 }
