@@ -1,26 +1,21 @@
 {
   "name": "Subiex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Discord bot written in Discord.js",
   "main": "bot.js",
   "bugs": {
     "url": "https://github.com/klendi/subiex/issues"
   },
   "homepage": "https://github.com/klendi/subiex#readme",
-
   "scripts": {
-    "bot": "node bot.js"
+    "start": "node bot.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klendi/subiex.git"
   },
-
   "author": "Klendi Gocci (github.com/klendi)",
-
   "license": "MIT",
-
   "dependencies": {
     "discord.js": "^11.2.1",
     "dotenv": "^4.0.0",
@@ -29,6 +24,7 @@
     "math.js": "^1.1.40",
     "mathjs": "^3.16.5",
     "node-opus": "^0.2.7",
+    "one-liner-joke": "^1.0.0",
     "request": "^2.83.0",
     "socket.io": "^0.9.19",
     "tiny-emitter": "^2.0.2",
@@ -36,8 +32,5 @@
   },
   "engines": {
     "node": "8.9.0"
-  },
-  "scripts": {
-    "start": "node bot.js"
   }
 }
