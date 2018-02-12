@@ -6,7 +6,7 @@ Subiex.registerCommand('joke', 'default', (message) => {
 	
   var joke = oneLinerJoke.getRandomJoke();
   message.channel.send({embed: {
-  color: 8319e8,
+  color: 9384170,
   description: joke.body
 }});
 
