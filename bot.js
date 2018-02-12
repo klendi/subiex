@@ -7,7 +7,8 @@ const dotenv = require('dotenv')
 dotenv.load()
 
 bot.on('ready', () =>  {
-  console.log('Subiex is online')
+  console.log('Subiex is online');
+  bot.user.setGame('Generating Code');
 })
 
 
