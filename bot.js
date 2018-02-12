@@ -8,7 +8,8 @@ dotenv.load()
 
 bot.on('ready', () =>  {
   console.log('Subiex is online');
-  bot.user.setGame('Generating Code');
+  // bot.user.setActivity('Generating Code');
+  bot.setStreaming('Call of Duty: Black Ops 10', 'https://www.twitch.tv/klendigocci', 1);
 })
 
 
