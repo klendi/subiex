@@ -3,10 +3,10 @@ const Subiex = require('../bot.js');
 const oneLinerJoke = require('one-liner-joke');
 
 Subiex.registerCommand('joke', 'default', (message) => {
-
+	
   var joke = oneLinerJoke.getRandomJoke();
   message.channel.send({embed: {
-  color: yellow,
+  color: AE00FF,
   description: joke.body
 }});
 
