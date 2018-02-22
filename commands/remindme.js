@@ -27,7 +27,7 @@ function remind(msg, messageTosay, uID) {
 }
 
 function waitingTimeToMs(timeOut) {
-    var num = timeOut.substring(0, arr.length - 1);
+    var num = timeOut.substring(0, timeOut.length - 1);
 
     if (timeOut.endsWith('s')) {
         //seconds
