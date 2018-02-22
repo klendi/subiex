@@ -30,7 +30,7 @@ function remind(msg, messageTosay) {
                 icon_url: msg.author.avatarURL
             },
             color: 9384170,
-            description: msg.channel.send("**" + msg.author + ", REMINDER ALERT:**" + messageTosay),
+            description: "**" + msg.author + ", REMINDER ALERT:**" + messageTosay,
             timestamp: new Date(),
         }
     });
