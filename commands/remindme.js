@@ -21,7 +21,7 @@ function createReminder(msg, timeInMinutes, userID, mesageToSay) {
 }
 
 function remind(msg, messageTosay, uID) {
-  msg.channel.send(mesageToSay);
+  msg.channel.send(messageTosay);
   console.log("Reminding now");
 }
 
