@@ -23,6 +23,7 @@ function createReminder(msg, timeInMinutes, mesageToSay) {
 }
 
 function remind(msg, messageTosay) {
+    msg.channel.send(msg.author);
     msg.channel.send({
         embed: {
             author: {
@@ -31,14 +32,13 @@ function remind(msg, messageTosay) {
             },
             color: 9384170,
             title: "",
-            description: msg.author + ",",
             fields: [{
-                    name: "REMINDER ALERT",
-                    value: "You prompted me to alert you at this time"
+                    name: "Reminder Alert",
+                    value: "You prompted me to alert you at this time",
                 },
                 {
-                    name: "YOUR MESSAGE",
-                    value: messageTosay
+                    name: "Your Super Important Message",
+                    value: messageTosay,
                 }
             ],
             timestamp: new Date(),
