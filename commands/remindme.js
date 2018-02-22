@@ -5,7 +5,7 @@ const config = require('../config')
 Subiex.registerCommand('remindme', 'default', (message, bot) => {
   var args = message.content.split(' ');
   message.react("☑");
-  message.channel.send('Done, creating a task with ' + args[1] + ' Seconds');
+  message.channel.send('Done, creating a task with ' + args[0] + ' Seconds');
 }, ['remind'], 'Creates a reminder. Pass without args to start a guided tour.', '[]')
 
 function createReminder(msg, timeInMinutes) {
