@@ -9,7 +9,7 @@ Subiex.registerCommand('remind', 'default', (message, bot) => {
     console.log("Arg is '" + args[0] + "'");
     var messageToSay = message.content.substring(args[0].length, message.content.length);
     console.log("Message to say is " + messageToSay);
-    message.channel.send('Done, reminding u in ' + args[0]);
+    message.channel.send('Got it, reminding you in ' + args[0]);
     createReminder(message, timeOut, messageToSay);
 
 }, ['remind'], 'Creates a reminder. Pass without args to start a guided tour.', '[]')
