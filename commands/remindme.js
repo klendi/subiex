@@ -6,7 +6,7 @@ Subiex.registerCommand('remindme', 'default', (message, bot) => {
     var args = message.content.split(' ');
     message.react("☑");
     var timeOut = args[0]
-    var messageToSay = message.content.substring(7 + args[0].length, message.content.length);
+    var messageToSay = message.content.substring(8 + args[0].length, message.content.length);
 
     message.channel.send('Done, reminding u in ' + args[0]);
     createReminder(message, timeOut, messageToSay);
@@ -21,7 +21,7 @@ function createReminder(msg, timeInMinutes, mesageToSay) {
 }
 
 function remind(msg, messageTosay) {
-  msg.channel.send( "**" + msg.author + " REMINDER ALERT**" + messageTosay);
+  msg.channel.send( "**" + msg.author + " REMINDER ALERT** " + messageTosay);
   console.log("Reminding now");
 }
 
