@@ -23,7 +23,7 @@ function createReminder(msg, timeInMinutes, mesageToSay) {
 }
 
 function remind(msg, messageTosay) {
-    msg.channel.send(msg.author);
+    msg.channel.send(msg.author.name);
     msg.channel.send({
         embed: {
             author: {
