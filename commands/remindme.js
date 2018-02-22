@@ -5,7 +5,8 @@ const config = require('../config')
 Subiex.registerCommand('remindme', 'default', (message, bot) => {
     var args = message.content.split(' ');
     message.react("☑");
-    var timeOut = args[0]
+    var timeOut = args[0];
+    console.log("Arg is '" + args[0] + " '" );
     var messageToSay = message.content.substring(9 + args[0].length, message.content.length);
     console.log("Message to say is " + messageToSay);
     message.channel.send('Done, reminding u in ' + args[0]);
