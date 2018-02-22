@@ -40,7 +40,7 @@ function remind(msg, messageTosay) {
                     name: "YOUR MESSAGE",
                     value: messageTosay
                 }
-            ]
+            ],
             timestamp: new Date(),
         }
     });
