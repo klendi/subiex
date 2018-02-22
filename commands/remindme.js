@@ -7,9 +7,9 @@ Subiex.registerCommand('remindme', 'default', (message, bot) => {
     message.react("☑");
     var timeOut = args[0]
     var messageToSay = "Reminder Alert";
+    
+    message.channel.send('Done, creating a task with ' + args[0]);
     createReminder(message, timeOut, message.author.id, mesageToSay);
-
-    message.channel.send('Done, creating a task with ' + args[0] + ' Seconds');
 }, ['remind'], 'Creates a reminder. Pass without args to start a guided tour.', '[]')
 
 function createReminder(msg, timeInMinutes, userID, mesageToSay) {
