@@ -23,7 +23,7 @@ function createReminder(msg, timeInMinutes, mesageToSay) {
 }
 
 function remind(msg, messageTosay) {
-  msg.channel.send( "**" + msg.author + ", REMINDER ALERT** " + messageTosay);
+  msg.channel.send( "**" + msg.author + ", REMINDER ALERT**" + messageTosay);
   console.log("Reminding now");
 }
 
