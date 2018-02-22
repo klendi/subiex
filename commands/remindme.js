@@ -30,7 +30,17 @@ function remind(msg, messageTosay) {
                 icon_url: msg.author.avatarURL
             },
             color: 9384170,
-            description: "**" + msg.author + ", REMINDER ALERT:**" + messageTosay,
+            title: "",
+            description: msg.author + ",",
+            fields: [{
+                    name: "REMINDER ALERT",
+                    value: "You prompted me to alert you at this time"
+                },
+                {
+                    name: "YOUR MESSAGE",
+                    value: messageTosay
+                }
+            ]
             timestamp: new Date(),
         }
     });
