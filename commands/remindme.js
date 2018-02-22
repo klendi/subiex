@@ -31,11 +31,8 @@ function remind(msg, messageTosay) {
                 icon_url: msg.author.avatarURL
             },
             color: 9384170,
-            title: "Reminder Alert",
-            fields: [{
-                name: "Your Super Important Message",
-                value: messageTosay,
-            }],
+            title: "Reminder Alert: Your Super Important Message",
+            description: "**" + messageTosay + "**",
             timestamp: new Date(),
         }
     });
