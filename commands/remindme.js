@@ -6,7 +6,7 @@ Subiex.registerCommand('remind', 'default', (message, bot) => {
     var args = message.content.split(' ');
     message.react("☑");
     var timeOut = args[0];
-    console.log("Arg is '" + args[0] + "'" );
+    console.log("Arg is '" + args[0] + "'");
     var messageToSay = message.content.substring(args[0].length, message.content.length);
     console.log("Message to say is " + messageToSay);
     message.channel.send('Done, reminding u in ' + args[0]);
@@ -15,16 +15,27 @@ Subiex.registerCommand('remind', 'default', (message, bot) => {
 }, ['remind'], 'Creates a reminder. Pass without args to start a guided tour.', '[]')
 
 function createReminder(msg, timeInMinutes, mesageToSay) {
-  var timeToRemind = waitingTimeToMs(timeInMinutes);
-  console.log("Started Waiting " + timeToRemind + " ms");
+    var timeToRemind = waitingTimeToMs(timeInMinutes);
+    console.log("Started Waiting " + timeToRemind + " ms");
     setTimeout(function() {
-      remind(msg, mesageToSay);
+        remind(msg, mesageToSay);
     }, timeToRemind);
 }
 
 function remind(msg, messageTosay) {
-  msg.channel.send( "**" + msg.author + ", REMINDER ALERT**" + messageTosay);
-  console.log("Reminding now");
+    msg.channel.send({
+        embed: {
+            author: {
+                name: msg.author.username,
+                icon_url: msg.author.avatarURL
+            },
+            color: 9384170,
+            description: msg.channel.send("**" + msg.author + ", REMINDER ALERT:**" + messageTosay),
+            timestamp: new Date(),
+        }
+    });
+
+    console.log("Reminding now");
 }
 
 function waitingTimeToMs(timeOut) {
@@ -34,18 +45,15 @@ function waitingTimeToMs(timeOut) {
         //seconds
         var s = Math.floor(num * 1000);
         return s;
-    } 
-    else if (timeOut.endsWith('m')) {
+    } else if (timeOut.endsWith('m')) {
         //minutes
         var m = Math.floor(num * 60000);
         return m;
-    } 
-    else if (timeOut.endsWith('h')) {
+    } else if (timeOut.endsWith('h')) {
         //hours
         var h = Math.floor(num * 3600000);
         return h;
-    } 
-    else if (timeOut.endsWith('d')) {
+    } else if (timeOut.endsWith('d')) {
         //days
         var d = Math.floor(num * (3600000 * 24));
         return d;
