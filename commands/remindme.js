@@ -6,22 +6,22 @@ Subiex.registerCommand('remindme', 'default', (message, bot) => {
     var args = message.content.split(' ');
     message.react("☑");
     var timeOut = args[0]
-    var messageToSay = "Reminder Alert, yay it worked";
+    var messageToSay = message.content.substring(7 + args[0].length, message.content.length);
 
     message.channel.send('Done, reminding u in ' + args[0]);
-    createReminder(message, timeOut, message.author, messageToSay);
+    createReminder(message, timeOut, messageToSay);
 }, ['remind'], 'Creates a reminder. Pass without args to start a guided tour.', '[]')
 
-function createReminder(msg, timeInMinutes, author, mesageToSay) {
+function createReminder(msg, timeInMinutes, mesageToSay) {
   var timeToRemind = waitingTimeToMs(timeInMinutes);
   console.log("Started Waiting " + timeToRemind + " ms");
     setTimeout(function() {
-      remind(msg, mesageToSay, author);
+      remind(msg, mesageToSay);
     }, timeToRemind);
 }
 
-function remind(msg, messageTosay, author) {
-  msg.channel.send(author + " " + messageTosay);
+function remind(msg, messageTosay) {
+  msg.channel.send( "**" + msg.author + " REMINDER ALERT**" + messageTosay);
   console.log("Reminding now");
 }
 
