@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Subiex = require('../bot.js');
-const ud = require('./urban-dictionary')
+const ud = require('urban-dictionary')
 
 Subiex.registerCommand('urban', 'default', (message) => {
 	var word = message.content.substring(6);
