@@ -3,9 +3,8 @@ const Discord = require('discord.js');
 const Subiex = require('../bot.js');
 const ud = require('./urban-dictionary')
 
-function toTitleCase(str)
-{
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+function toTitleCase(str) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 Subiex.registerCommand('urban', 'default', (message) => {
@@ -28,11 +27,11 @@ Subiex.registerCommand('urban', 'default', (message) => {
                             name: 'Second Definition',
                             value: toTitleCase(entries[1].definition)
                         },
-                         {
+                        {
                             name: "**First Example**",
                             value: toTitleCase(entries[0].example)
                         },
-                         {
+                        {
                             name: "**Second Example**",
                             value: toTitleCase(entries[1].example)
                         },
