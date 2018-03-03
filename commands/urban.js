@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 const Subiex = require('../bot.js');
+const ud = require('./urban-dictionary')
 
 Subiex.registerCommand('urban', 'default', (message) => {
 	var word = message.content.substring(6);
-	
+
     ud.term(word, function(error, entries, tags, sounds) {
         if (error) {
             console.error(error.message)
