@@ -1,37 +1,39 @@
+'use strict'
 const Discord = require('discord.js');
 const Subiex = require('../bot.js');
-const ud = require('urban-dictionary')
+const ud = require('./urban-dictionary')
 
 Subiex.registerCommand('urban', 'default', (message) => {
-	var word = message.content.substring(6);
+    let msg = message.content + '';
 
-    ud.term(word, function(error, entries, tags, sounds) {
+    ud.term(message.content, function(error, entries, tags, sounds) {
         if (error) {
             console.error(error.message)
+            message.channel.send(error.message);
         } else {
             message.channel.send({
                 embed: {
-                    author: {
-                        name: msg.author.username,
-                        icon_url: msg.author.avatarURL
-                    },
                     color: 9384170,
-                    title: entries[0].word,
-                    description: "**" + entries[0].definition + "**",
+                    title: '**' + entries[0].word + '**',
                     fields: [{
-                            name: "Word",
+                            name: "Definition",
                             value: entries[0].definition
                         },
                         {
-                            name: "Example",
-                            value: entries[0].example
+                            name: 'Second Definition',
+                            value: entries[1].definition
+                        },
+                         {
+                            name: "**First Example**",
+                            value: entries[1].example
+                        },
+                         {
+                            name: "**Second Example**",
+                            value: entries[1].example
                         },
                     ],
                 }
             });
-            console.log(entries[0].word)
-            console.log(entries[0].definition)
-            console.log(entries[0].example)
         }
     })
 
