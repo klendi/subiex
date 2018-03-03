@@ -8,7 +8,7 @@ dotenv.load()
 
 bot.on('ready', () =>  {
   console.log('Subiex is online');
-  bot.user.setActivity('Generating Code');
+  bot.user.setActivity('your mom');
 })
 
 
