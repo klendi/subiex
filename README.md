@@ -1,3 +1,53 @@
 # Subiex
-Discord.js Bot
-Based on [Confax](https://github.com/bananaprotocol/OldConfax) by bananaprotocol
+
+Fun bot written in discord.js
+
+## Install
+
+### You want to invite it at your server
+
+##### Invite subiex to your Server using [Discord Invite Link](https://discordapp.com/oauth2/authorize?client_id=320957715004522496&scope=bot)
+
+### You want to host it
+
+Make sure, that you have git, node and npm installed
+
+#### Clone the repo using
+
+    git clone https://github.com/klendi/subiex.git
+
+#### Install all dependencies using
+
+    npm install
+
+#### Start the bot using
+
+    npm start
+
+#### To keep the bot up to date use
+
+    git pull
+    
+and then
+
+    npm install
+
+## Features & Commands
+* Kick & Ban commands
+* Crypto command
+* Math command
+* Urban dictionary search
+* Moji command, etc
+
+## Screenshots
+* Joke Command
+
+## Contributing
+
+Contributions are welcome! Come on board!
+
+## License
+
+[MIT](LICENSE)
+
+*You can do what the heck you want with it.*
