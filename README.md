@@ -34,7 +34,7 @@ and then
 
 ## Features & Commands
 * Kick & Ban commands
-* Crypto command
+* Crypto command by my friend [GlassToeStudio](https://github.com/GlassToeStudio)
 * Math command
 * Urban dictionary search
 * Moji command, etc
@@ -42,6 +42,26 @@ and then
 ## Screenshots
 * Joke Command
 
+![JokeCommand](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/1.png)
+![JokeCommand](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/2.png)
+
+
+
+* Crypto Comand by 
+
+
+![Crypto](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/crypto%20by%20glasstoe.png)
+
+
+* urban dictionary search
+
+![Dict](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/urban.png)
+
+
+* remind me command
+
+
+![remind](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/remind%20me.png)
 ## Contributing
 
 Contributions are welcome! Come on board!
