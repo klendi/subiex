@@ -40,26 +40,20 @@ and then
 * Moji command, etc
 
 ## Screenshots
-* Joke Command
 
 ![JokeCommand](https://github.com/klendi/Subiex/blob/master/screenshots/1.png)
+
+
 ![JokeCommand](https://github.com/klendi/Subiex/blob/master/screenshots/2.png)
 
 
-
-* Crypto Comand by 
 ![Crypto](https://github.com/klendi/Subiex/blob/master/screenshots/crypto.png)
 
-
-* urban dictionary search
 
 ![Dict](https://github.com/klendi/Subiex/blob/master/screenshots/urban.png)
 
 
-* remind me command
-
-
-![remind](https://github.com/klendi/Subiex/blob/master/screenshots/remind%20me.png)
+![remind](https://github.com/klendi/Subiex/blob/master/screenshots/remind.png)
 ## Contributing
 
 Contributions are welcome! Come on board!
