@@ -42,26 +42,24 @@ and then
 ## Screenshots
 * Joke Command
 
-![JokeCommand](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/1.png)
-![JokeCommand](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/2.png)
+![JokeCommand](https://github.com/klendi/Subiex/blob/master/screenshots/1.png)
+![JokeCommand](https://github.com/klendi/Subiex/blob/master/screenshots/2.png)
 
 
 
 * Crypto Comand by 
-
-
-![Crypto](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/crypto%20by%20glasstoe.png)
+![Crypto](https://github.com/klendi/Subiex/blob/master/screenshots/crypto.png)
 
 
 * urban dictionary search
 
-![Dict](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/urban.png)
+![Dict](https://github.com/klendi/Subiex/blob/master/screenshots/urban.png)
 
 
 * remind me command
 
 
-![remind](https://github.com/klendi/Subiex/blob/master/readme%20screenshots/remind%20me.png)
+![remind](https://github.com/klendi/Subiex/blob/master/screenshots/remind%20me.png)
 ## Contributing
 
 Contributions are welcome! Come on board!
