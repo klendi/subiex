@@ -30,7 +30,7 @@ function mention(message, mention, num) {
             }
             return;
         }
-        message.channel.send(mention + " Prepare to be spammed " + num + " times. Just a little gift by " + message.author.username);
+        message.channel.send(" :regional_indicator_r: :regional_indicator_i: :regional_indicator_p: :skull:" + mention +  ", " +  num + " spamm's incoming! Just a little gift by " + message.author);
         for (var i = 0; i < num; i++) {
             message.channel.send(':robot: Let me Spam ur ass ' + mention);
         }
