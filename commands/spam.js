@@ -22,7 +22,7 @@ Subiex.registerCommand('spam', 'default', (message, bot) => {
 }, ['spam'], 'Spam', '[]')
 
 function mention(message, mention, num) {
-    if (num < 50) {
+    if (num <= 50) {
         if (mention.id == config.botID) {
             message.reply("You can't spam me muhfacka :sunglasses: , as a result u earned 10 free spams by me xD");
             for (var i = 0; i < 10; i++) {
@@ -30,11 +30,11 @@ function mention(message, mention, num) {
             }
             return;
         }
-        message.channel.send(" :regional_indicator_r: :regional_indicator_i: :regional_indicator_p: :skull:" + mention +  ", " +  num + " spamm's incoming! Just a little gift by " + message.author);
+        message.channel.send(" :regional_indicator_r: :regional_indicator_i: :regional_indicator_p: :skull:" + mention +  ", " +  num + " spam's incoming! Just a little gift by " + message.author);
         for (var i = 0; i < num; i++) {
             message.channel.send(':robot: Let me Spam ur ass ' + mention);
         }
-    } else if (num > 50) {
+    } else if (num > 51) {
         message.channel.send("You can't ping someone or yourself more than 50 times!");
     } else {
         message.channel.send("No valid input was given!");

@@ -1,38 +1,47 @@
 const Discord = require('discord.js')
 const Subiex = require('../bot.js')
+const client = new Discord.Client();
 const config = require('../config.json')
 
 Subiex.registerCommand('help', 'default', (message, bot) => {
-  let commands = Subiex.commands
-  let cmds = {
-    master: [],
-    moderator: [],
-    default: [],
-    dm: []
-  }
-
-  for (let loopCmdType in commands) {
-    for (let loopCmd in commands[loopCmdType]) {
-      cmds[loopCmdType].push(loopCmd)
-/*      let aliases = commands[loopCmdType][loopCmd].aliases
-        for (let i = 0; i < aliases.length; i++) {
-        let alias = aliases[i]
-        cmds[loopCmdType].push(alias)
-      } */ // Remove aliases from default command output
+    let commands = Subiex.commands
+    let cmds = {
+        master: [],
+        moderator: [],
+        default: [],
+        dm: []
     }
-  }
 
-  for (let loopCmdType in cmds) { cmds[loopCmdType].sort() }
+    for (let loopCmdType in commands) {
+        for (let loopCmd in commands[loopCmdType]) {
+            cmds[loopCmdType].push(loopCmd)
+        }
+    }
 
-  let mastercmds = Object.keys(cmds['master']).length
-  let modcmds = Object.keys(cmds['moderator']).length
-  let defaultcmds = Object.keys(cmds['default']).length
-  let dmcmds = Object.keys(cmds['dm']).length
+    for (let loopCmdType in cmds) { cmds[loopCmdType].sort() }
 
-  return 'Default Commands **(' + defaultcmds + ')** ```' + cmds['default'].join(' \n') + ' ```\n' +
-         'DM Commands **(' + dmcmds + ')** ```' + cmds['dm'].join(' \n') + ' ```\n' +
-         'Moderator Commands **(' + modcmds + ')** ```' + cmds['moderator'].join(' \n') + ' ```\n' +
-         'Master Commands **(' + mastercmds + ')** ```' + cmds['master'].join(' \n') + ' ```\n' +
-         'All Commands - **(' + (defaultcmds + dmcmds + modcmds + mastercmds) + ')**' +
-         '```Use advancedhelp to get an advanced list of all commands or cmdhelp to get a detailed description of one. ```'
+    let mastercmds = Object.keys(cmds['master']).length
+    let modcmds = Object.keys(cmds['moderator']).length
+    let defaultcmds = Object.keys(cmds['default']).length
+    let dmcmds = Object.keys(cmds['dm']).length
+
+    message.channel.send({
+        embed: {
+            color: 9384170,
+            title: "Subiex Help",
+            fields: [{
+                    name: 'Information',
+                    value: 'Bot prefix : **!**\nServing in **' + bot.guilds.size + '** servers\n' + 'Created by **Klendi**\n' + 'Want to add a command? Make a pull request (https://github.com/klendi/subiex)\n\n'  ,
+                },
+                {
+                    name: 'Commands **(' + defaultcmds + ')**',
+                    value: '```' + cmds['default'].join(' \n') + ' ```\n'
+                },
+                {
+                    name: 'Master Commands **(' + mastercmds + ')**',
+                    value: '```' + cmds['master'].join(' \n') + ' ```\n'
+                },
+            ],
+        }
+    });
 }, ['cmds', 'commands', 'commandlist'], 'List all commands', '[]')
