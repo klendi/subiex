@@ -1,6 +1,6 @@
 # Subiex
 
-Fun bot written in discord.js based on [confax](https://github.com/bananaprotocol/confax.git])
+Fun bot written in discord.js based on [confax](https://github.com/bananaprotocol/confax.git)
 
 ## Install
 
