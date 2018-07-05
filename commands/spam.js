@@ -8,16 +8,18 @@ Subiex.registerCommand('spam', 'default', (message, bot) => {
     let args = message.content.split(' ');
     let num = 0;
 
-    if (mentioned === undefined && args.length <= 1) {
-        console.log("No user was mentioned")
-        num = parseInt(message.content);
-        if (num !== undefined)
-            mention(message, message.author, num)
-    } else {
-        let name = mentioned.username
-        num = parseInt(args[1]);
-        console.log("About to spam " + name + " " + num + " times by " + message.author.username);
-        mention(message, mentioned, num);
+    if (mentioned.id !== config.master) {
+        if (mentioned === undefined && args.length <= 1) {
+            console.log("No user was mentioned")
+            num = parseInt(message.content);
+            if (num !== undefined)
+                mention(message, message.author, num)
+        } else {
+            let name = mentioned.username
+            num = parseInt(args[1]);
+            console.log("About to spam " + name + " " + num + " times by " + message.author.username);
+            mention(message, mentioned, num);
+        }
     }
 }, ['spam'], 'Spam', '[]')
 
@@ -30,7 +32,7 @@ function mention(message, mention, num) {
             }
             return;
         }
-        message.channel.send(" :regional_indicator_r: :regional_indicator_i: :regional_indicator_p: :skull:" + mention +  ", " +  num + " spam's incoming! Just a little gift by " + message.author);
+        message.channel.send(" :regional_indicator_r: :regional_indicator_i: :regional_indicator_p: :skull:" + mention + ", " + num + " spam's incoming! Just a little gift by " + message.author);
         for (var i = 0; i < num; i++) {
             message.channel.send(':robot: Let me Spam ur ass ' + mention);
         }
