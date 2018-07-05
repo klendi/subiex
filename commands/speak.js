@@ -1,8 +1,10 @@
 //Created by GlassToeStudio
+//This software includes some portions of the project Confax 
+//(https://github.com/bananaprotocol/confax), which is licensed under the MIT License.
 
 const Subiex = require('../bot.js')
 
-Subiex.registerCommand('speak', 'default', (message, bot) => {
+Subiex.registerCommand('speak', 'moderator', (message, bot) => {
   let myMention = message.mentions.users.array()[0]
   let myChannel = message.mentions.channels.array()[0]
   let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
