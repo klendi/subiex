@@ -1,6 +1,4 @@
 /*
-MIT License
-
 Copyright (c) 2017-2018 bananaprotocol
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
