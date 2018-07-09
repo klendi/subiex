@@ -13,6 +13,11 @@ bot.on('ready', () => {
     // bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 
+bot.on("message", (message) => {
+    if(message.channel.type === 'dm')
+        console.log("[DM]" + message.author.username + ": " + message.content)
+});
+
 
 exports.bot = bot
 exports.config = config
