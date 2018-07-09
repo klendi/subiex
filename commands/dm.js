@@ -2,29 +2,29 @@ const Subiex = require('../bot.js')
 
 Subiex.registerCommand('dm', 'moderator', (message, bot) => {
 
-    let myMention = searchUser(message, message.content)
-    let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
+    // let myMention = searchUser(message, message.content)
+    // let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
 
-    let msg = extractFirstText(message.content)
-    let channel = message.guild.channels.find('name', myChannel.name)
+    // let msg = extractFirstText(message.content)
+    // let channel = message.guild.channels.find('name', myChannel.name)
 
-    if (myMention !== undefined) {
-        msg = msg.replace(myMention.id, '').replace('<@>', '')
-        msg = msg.replace('<@!>', '') // If user has a nickname
-    } else { myMention = '' }
+    // if (myMention !== undefined) {
+    //     msg = msg.replace(myMention.id, '').replace('<@>', '')
+    //     msg = msg.replace('<@!>', '') // If user has a nickname
+    // } else { myMention = '' }
 
-    if (deleteMessage) message.delete()
-    if (msg === '') return "The message can't be empty!"
+    // if (deleteMessage) message.delete()
+    // if (msg === '') return "The message can't be empty!"
 
 
-    channel.send(myMention + msg)
+    // channel.send(myMention + msg)
     searchUser(message, message.content)
 }, ['pm', 'direct'], 'Make the bot speak to a given channel', '[to channel] <to member> [message]')
 
 function searchUser(message) {
     let textInDQuotes = extractFirstText(message.content)
-    let name = message.content.replace(textInDQuotes, '')
-    console.log("textInDQuotes is " + textInDQuotes)
+    let name = message.content.replace('"' + textInDQuotes + '"', '')
+    console.log("textInDQuotes is " +  textInDQuotes)
     console.log("name is " + name)
 
     var receiver_id = "";
