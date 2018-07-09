@@ -1,31 +1,34 @@
 {
   "name": "subiex",
   "version": "1.2.0",
-  "description": "Super Fun and modular bot written in js",
+  "description": "A super fun and modular discord.js bot written in js",
   "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^6.0.0",
+    "js-yaml": "^3.12.0",
     "mathjs": "^5.0.2",
-    "one-liner-joke": "^1.0.0"
+    "one-liner-joke": "^1.0.0",
+    "request": "^2.87.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node bot.js"
+    "test": "node bot.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klendi/subiex.git"
   },
   "keywords": [
-    "discord.js",
+    "discord",
     "bot",
-    "js"
+    "node",
+    "discord.js"
   ],
   "author": "klendi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/klendi/subiex/issues"
   },
-  "homepage": "https://github.com/klendi/subiex#readme",
+  "homepage": "https://github.com/klendi/subiex#readme"
 }
