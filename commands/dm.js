@@ -2,7 +2,7 @@ const Subiex = require('../bot.js')
 
 Subiex.registerCommand('dm', 'moderator', (message, bot) => {
     let isDM = message.channel.type === 1
-    console.log("it is a dm message")
+    console.log("is DM " + isDM)
     // let myChannel = message.mentions.channels.array()[0]
     // let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
     // if (myChannel === undefined) {
@@ -22,8 +22,6 @@ Subiex.registerCommand('dm', 'moderator', (message, bot) => {
 
     // if (deleteMessage) message.delete()
     // if (msg === '') return "The message can't be empty!"
-
-
     // channel.send(myMention + msg)
     searchUser(message, message.content)
 }, ['pm', 'direct'], 'Make the bot speak to a given channel', '[to channel] <to member> [message]')
