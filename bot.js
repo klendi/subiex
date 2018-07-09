@@ -9,7 +9,7 @@ dotenv.load()
 bot.on('ready', () => {
     console.log('Subiex is online');
     bot.user.setActivity('World Cup 2018');
-    // console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
+    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
     // bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 

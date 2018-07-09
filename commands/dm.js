@@ -3,12 +3,10 @@ const Subiex = require('../bot.js')
 Subiex.registerCommand('dm', 'moderator', (message, bot) => {
     let msg = extractFirstText(message.content).trim()
     let userID = searchUser(message)
-    console.log("User id is " + userID)
     let guildMember = message.channel.members.find('id', userID)
     let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
 
-    console.log("Guild is " + guildMember.username)
-    console.log("Message sent to " + guildMember.username + " by " + message.author.username + " and the message is : " + msg)
+    console.log("Message sent to " + guildMember.user.username + " by " + message.author.username + " and the message is : " + msg)
 
     if (deleteMessage) message.delete()
 
