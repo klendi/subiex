@@ -14,7 +14,7 @@ bot.on('ready', () => {
 });
 
 bot.on("message", (message) => {
-    if(message.channel.type === 'dm')
+    if(message.channel.type === 'dm' && message.author.id != config.botID)
         console.log("[DM]" + message.author.username + ": " + message.content)
 });
 
