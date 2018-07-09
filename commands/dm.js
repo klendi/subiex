@@ -1,12 +1,19 @@
 const Subiex = require('../bot.js')
 
 Subiex.registerCommand('dm', 'moderator', (message, bot) => {
+    let isDM = message.channel.type === 1
+    console.log("it is a dm message")
+    let myChannel = message.mentions.channels.array()[0]
+    let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
+    if (myChannel === undefined) {
+        if (deleteMessage) message.delete()
+        return ('Please mention a #channel so I know where to speak!')
+    }
 
-    // let myMention = searchUser(message, message.content)
-    // let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
+    let msg = message.content.replace(myChannel.id, '').replace('<#>', '')
+    let channel = message.guild.channels.find('name', myChannel.name)
 
-    // let msg = extractFirstText(message.content)
-    // let channel = message.guild.channels.find('name', myChannel.name)
+    let channel = message.guild.channels.find('name', myChannel.name)
 
     // if (myMention !== undefined) {
     //     msg = msg.replace(myMention.id, '').replace('<@>', '')
@@ -22,10 +29,8 @@ Subiex.registerCommand('dm', 'moderator', (message, bot) => {
 }, ['pm', 'direct'], 'Make the bot speak to a given channel', '[to channel] <to member> [message]')
 
 function searchUser(message) {
-    let textInDQuotes = extractFirstText(message.content)
-    let name = message.content.replace('"' + textInDQuotes + '"', '')
-    console.log("textInDQuotes is " +  textInDQuotes)
-    console.log("name is " + name)
+    let textInDQuotes = extractFirstText(message.content).trim()
+    let name = message.content.replace('"' + textInDQuotes + '"', '').trim()
 
     var receiver_id = "";
     if (message.mentions.members.size != 0) {
