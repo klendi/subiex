@@ -3,17 +3,17 @@ const Subiex = require('../bot.js')
 Subiex.registerCommand('dm', 'moderator', (message, bot) => {
     let isDM = message.channel.type === 1
     console.log("it is a dm message")
-    let myChannel = message.mentions.channels.array()[0]
-    let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
-    if (myChannel === undefined) {
-        if (deleteMessage) message.delete()
-        return ('Please mention a #channel so I know where to speak!')
-    }
+    // let myChannel = message.mentions.channels.array()[0]
+    // let deleteMessage = message.guild.member(bot.user).hasPermission('MANAGE_MESSAGES')
+    // if (myChannel === undefined) {
+        // if (deleteMessage) message.delete()
+        // return ('Please mention a #channel so I know where to speak!')
+    // }
 
-    let msg = message.content.replace(myChannel.id, '').replace('<#>', '')
-    let channel = message.guild.channels.find('name', myChannel.name)
+    // let msg = message.content.replace(myChannel.id, '').replace('<#>', '')
+    // let channel = message.guild.channels.find('name', myChannel.name)
 
-    let channel = message.guild.channels.find('name', myChannel.name)
+    // let channel = message.guild.channels.find('name', myChannel.name)
 
     // if (myMention !== undefined) {
     //     msg = msg.replace(myMention.id, '').replace('<@>', '')
