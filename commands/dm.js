@@ -52,3 +52,4 @@ function searchUser(message, name) {
             }
         }
     }
+  }
