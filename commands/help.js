@@ -38,6 +38,10 @@ Subiex.registerCommand('help', 'default', (message, bot) => {
                     value: '```' + cmds['default'].join(' \n') + ' ```\n'
                 },
                 {
+                    name: 'Moderator Commands **(' + modcmds + ')**',
+                    value: '```' + cmds['moderator'].join(' \n') + ' ```\n'
+                },
+                {
                     name: 'Master Commands **(' + mastercmds + ')**',
                     value: '```' + cmds['master'].join(' \n') + ' ```\n'
                 },

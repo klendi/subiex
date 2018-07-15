@@ -9,6 +9,7 @@ Subiex.registerCommand('meme', 'default', (message, bot) => {
     result.on('data', (chunk) => {
       body += chunk
     })
+    
 
     result.on('end', () => {
       var response = JSON.parse(body)
