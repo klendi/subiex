@@ -8,13 +8,14 @@ dotenv.load()
 
 bot.on('ready', () => {
     console.log('Subiex is online');
-    bot.user.setActivity('World Cup 2018');
-    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
-    // bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+    bot.user.setActivity('!help to begin', {
+        type: 'STREAMING',
+        url: 'https://www.twitch.tv/klendi'
+    });
 });
 
 bot.on("message", (message) => {
-    if(message.channel.type === 'dm' && message.author.id != config.botID)
+    if (message.channel.type === 'dm' && message.author.id != config.botID)
         console.log("[DM]" + message.author.username + ": " + message.content)
 });
 
@@ -28,7 +29,7 @@ exports.commands = {
     dm: {}
 }
 
-registerCommand = function(name, type, callback, aliases, description, usage) {
+registerCommand = function (name, type, callback, aliases, description, usage) {
     exports.commands[type][name] = {}
     exports.commands[type][name]['aliases'] = aliases
     exports.commands[type][name]['description'] = description
