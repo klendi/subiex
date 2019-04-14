@@ -3,6 +3,10 @@
   "version": "1.2.0",
   "description": "A super fun and modular discord.js bot written in js",
   "main": "bot.js",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^6.0.0",
@@ -28,9 +32,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/klendi/subiex/issues"
-  },
-  "engines": {
-    "node": "11.0.0"
   },
   "homepage": "https://github.com/klendi/subiex#readme"
 }
