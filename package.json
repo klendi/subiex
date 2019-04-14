@@ -8,12 +8,11 @@
     "dotenv": "^6.0.0",
     "js-yaml": "^3.12.0",
     "mathjs": "^5.0.2",
-    "one-liner-joke": "^1.0.0",
+    "one-liner-joke": "^1.2.0",
     "request": "^2.87.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "node bot.js"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
