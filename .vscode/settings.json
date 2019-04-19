@@ -1,4 +1,1 @@
-{
-  "appService.defaultWebAppToDeploy": "/subscriptions/0a83220c-5045-441d-9fd4-d7da0ef9f91f/resourceGroups/subiex/providers/Microsoft.Web/sites/subiex",
-  "appService.deploySubpath": ""
-}
+{}
