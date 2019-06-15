@@ -1,5 +1,5 @@
 var Utils = {
-  embedMessage: function (text) {
+  embedMessage: function(text) {
     return {
       embed: {
         color: 9384170,
@@ -7,13 +7,22 @@ var Utils = {
       }
     }
   },
-  embedMessageError: function (text) {
+  embedMessageError: function(text) {
     return {
       embed: {
         color: 0xfc1846,
         description: text
       }
     }
+  },
+  bold: function(text) {
+    return `**${text}**`
+  },
+  italic: function(text) {
+    return `*${text}*`
+  },
+  code: function(text) {
+    return '```' + text + '```'
   }
 }
 
