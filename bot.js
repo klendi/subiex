@@ -6,6 +6,7 @@ const config = require('./config')
 const dotenv = require('dotenv')
 dotenv.load()
 
+var client = client;
 bot.on('ready', () => {
     console.log('Subiex is online');
     bot.user.setActivity('!help to begin', {
